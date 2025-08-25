@@ -8,3 +8,8 @@ node_modules
 *.lnk
 desktop.ini
 
+
+# Windows junk
+*.lnk
+desktop.ini
+
