@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book a Reading • Mystic Arcana Tarot</title>
+  <meta name="description" content="Choose a service, pick a slot, and pay securely." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="container header">
+    <div class="brand">
+      <span class="logo">☽</span>
+      <h1>Mystic Arcana Tarot</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="booking.html" class="active">Book a Reading</a>
+    </nav>
+  </header>
+
+  <main class="container booking">
+    <h2>Book a Reading</h2>
+
+    <form id="booking-form">
+      <fieldset>
+        <legend>Choose your service</legend>
+        <label class="radio">
+          <input type="radio" name="service" value="clarity30" checked />
+          <span>Clarity Spread — 30 min</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="service" value="deep60" />
+          <span>Deep Dive — 60 min</span>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Pick date & time</legend>
+        <div class="row">
+          <input type="date" id="date" required />
+          <div id="slots" class="slots"></div>
+        </div>
+        <p class="hint">Times are shown in your local timezone.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your details</legend>
+        <div class="row two">
+          <input type="text" id="name" placeholder="Your name" required />
+          <input type="email" id="email" placeholder="Email for confirmation" required />
+        </div>
+      </fieldset>
+
+      <button id="payBtn" class="btn primary" type="submit">Pay & Book</button>
+      <p id="status" class="status"></p>
+    </form>
+  </main>
+
+  <footer class="container footer">
+    <p>© <span id="year"></span> Mystic Arcana Tarot • All rights reserved</p>
+  </footer>
+
+  <script src="assets/js/booking.js"></script>
+</body>
+</html>

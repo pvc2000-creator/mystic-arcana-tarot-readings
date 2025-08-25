@@ -1,0 +1,11 @@
+{
+  "name": "mystic-arcana-tarot",
+  "private": true,
+  "scripts": {
+    "vercel-dev": "vercel dev",
+    "netlify-dev": "netlify dev"
+  },
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}

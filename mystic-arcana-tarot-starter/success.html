@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank you • Mystic Arcana Tarot</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <main class="container center">
+    <h2>✨ Booking confirmed!</h2>
+    <p>We’ve received your payment. A confirmation has been sent to your email.</p>
+    <div id="details" class="success-box">Fetching booking details…</div>
+    <a class="btn" href="index.html">Back to Home</a>
+  </main>
+
+  <script>
+    (async () => {
+      const params = new URLSearchParams(location.search);
+      const sid = params.get("session_id");
+      if (!sid) {
+        document.getElementById("details").textContent = "No session id found.";
+        return;
+      }
+      try {
+        let res = await fetch(`/api/verify-session?session_id=${sid}`);
+        if (!res.ok) res = await fetch(`/.netlify/functions/verifySession?session_id=${sid}`);
+        const data = await res.json();
+        const md = data.metadata || {};
+        document.getElementById("details").innerHTML = `
+          <p><strong>Service:</strong> ${md.service || "—"}</p>
+          <p><strong>Name:</strong> ${md.customer_name || "—"}</p>
+          <p><strong>Email:</strong> ${data.customer_details?.email || md.customer_email || "—"}</p>
+          <p><strong>Selected time:</strong> ${md.date || "—"} ${md.time || ""}</p>
+          <p><strong>Status:</strong> ${data.payment_status || "paid"}</p>
+        `;
+      } catch (e) {
+        document.getElementById("details").textContent = "Could not verify session.";
+      }
+    })();
+  </script>
+</body>
+</html>
