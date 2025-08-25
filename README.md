@@ -10,3 +10,5 @@ Beginner-friendly starter to accept bookings and payments (Stripe Checkout).
 © 2025 Mystic Arcana Tarot
 
 Trigger deploy 2025-08-26T02:28:52.8552803+05:30
+
+trigger deploy 2025-08-26T03:26:04.3734911+05:30
