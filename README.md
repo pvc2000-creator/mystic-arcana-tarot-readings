@@ -8,3 +8,5 @@ Beginner-friendly starter to accept bookings and payments (Stripe Checkout).
 3) Deploy → test in Stripe test mode.
 
 © 2025 Mystic Arcana Tarot
+
+Trigger deploy 2025-08-26T02:28:52.8552803+05:30
